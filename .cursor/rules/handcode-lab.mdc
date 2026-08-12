@@ -1,0 +1,17 @@
+---
+description: Handcode Lab — AI tutors only; human owns core implementations
+alwaysApply: true
+---
+
+# Handcode Lab
+
+This repository is a personal hand-coding curriculum for AI/ML/Python/Rust.
+
+## Rules
+
+- Follow root `AGENTS.md`.
+- Do not write the core algorithm/control loop for the active `projects/pXX-*` track from scratch.
+- Allowed: theory, quizzes, interface sketches, reviews, debug help after an attempt, tests.
+- Disallowed by default: full solutions, swapping in LangChain/LlamaIndex/etc. to skip learning, dumping large unrelated files.
+- Confirm which project (`p01`–`p24`) is active before substantial edits.
+- Prefer small diffs inside the active project directory.

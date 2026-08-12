@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Practical Syllabus for YC-Style AI Engineering Roles</title>
+<style>
+  :root {
+    color-scheme: only light;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+  }
+  body {
+    font-family: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.45;
+  }
+  .page {
+    max-width: 7.2in;
+    margin: 0 auto;
+    padding: 0.85in 0.9in 1.1in;
+  }
+  .running-header {
+    font-size: 9pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.35em;
+    margin-bottom: 1.4em;
+  }
+  .running-header .right { float: right; }
+  h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.6em 0 0.35em;
+    line-height: 1.25;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 11pt;
+    font-style: italic;
+    margin: 0 0 0.8em;
+  }
+  .meta {
+    text-align: center;
+    font-size: 10.5pt;
+    margin: 0 0 1.4em;
+  }
+  .meta div { margin: 0.15em 0; }
+  .abstract {
+    margin: 1.2em 0 1.5em;
+    font-size: 10.5pt;
+  }
+  .abstract .label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.35em;
+  }
+  h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 1.6em 0 0.55em;
+    text-align: left;
+  }
+  h3 {
+    font-size: 11pt;
+    font-weight: bold;
+    font-style: italic;
+    margin: 1.1em 0 0.4em;
+  }
+  p { margin: 0.55em 0; text-align: justify; hyphens: auto; }
+  ul, ol { margin: 0.4em 0 0.7em 1.3em; padding: 0; }
+  li { margin: 0.25em 0; }
+  a { color: #000; text-decoration: underline; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 0.8em 0 1.1em;
+    line-height: 1.3;
+  }
+  th, td {
+    border: 1px solid #000;
+    padding: 0.28em 0.35em;
+    vertical-align: top;
+    text-align: left;
+  }
+  th {
+    font-weight: bold;
+    background: #fff;
+  }
+  .practice {
+    margin: 0.9em 0 1.1em;
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid #ccc;
+  }
+  .practice:last-child { border-bottom: none; }
+  .practice .pid {
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+  }
+  .practice dl {
+    margin: 0.35em 0 0;
+    display: grid;
+    grid-template-columns: 5.5em 1fr;
+    gap: 0.15em 0.5em;
+    font-size: 10.5pt;
+  }
+  .practice dt {
+    font-weight: bold;
+    margin: 0;
+  }
+  .practice dd {
+    margin: 0;
+  }
+  .footnote {
+    font-size: 9.5pt;
+    margin-top: 2em;
+    border-top: 1px solid #000;
+    padding-top: 0.6em;
+  }
+  .toc { margin: 1em 0 1.5em; }
+  .toc ol { list-style: none; margin-left: 0; }
+  .toc li { margin: 0.2em 0; }
+  .toc a { text-decoration: none; border-bottom: 1px dotted #000; }
+  .center { text-align: center; }
+  .small { font-size: 10pt; }
+  @media print {
+    .page { padding: 0; max-width: none; }
+    a { text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="running-header">
+    Working notes
+    <span class="right">August 2026</span>
+  </div>
+
+  <h1>A Practical Syllabus for YC-Style<br>AI, ML, and Systems Engineering Roles</h1>
+  <p class="subtitle">Hand-coded practice tracks mapped to recent Work at a Startup postings</p>
+  <div class="meta">
+    <div>Atharva</div>
+    <div class="small">Interests: machine learning, artificial intelligence, Python, Rust</div>
+    <div class="small">Method: theory study · hand implementation · AI as tutor/reviewer only</div>
+  </div>
+
+  <div class="abstract">
+    <span class="label">Abstract.</span>
+    This note surveys recent Y&nbsp;Combinator company engineering openings that emphasize
+    production LLM systems, retrieval, evaluation, multimodal agents, and
+    performance-critical infrastructure (often Python plus Rust, C++, or Go).
+    It summarizes common interview formats at early-stage YC companies, then
+    presents a broad menu of practice projects suitable for deciding a personal
+    learning path. The intent is breadth for selection, not a mandate to complete
+    every item. Compensations and openings change frequently; verify on the linked
+    listings before applying.
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s1">1. Demand themes</a></li>
+      <li><a href="#s2">2. Sample of relevant openings</a></li>
+      <li><a href="#s3">3. Interview process notes</a></li>
+      <li><a href="#s4">4. Practice catalogue</a></li>
+      <li><a href="#s5">5. Suggested shortlists</a></li>
+      <li><a href="#s6">6. Sources</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1">1. Demand themes</h2>
+  <p>
+    Across recent batches (approximately W24–S26 / P26), postings that match the
+    stated interests cluster into two overlapping skill families.
+  </p>
+  <h3>1.1 Applied AI product engineering</h3>
+  <ul>
+    <li>Agent loops, tool schemas, multi-step reliability</li>
+    <li>RAG: chunking, hybrid search, reranking, citation grounding</li>
+    <li>Evaluation harnesses and regression gates in continuous integration</li>
+    <li>Document / OCR pipelines into structured data</li>
+    <li>Context and memory graphs for long-running agents</li>
+  </ul>
+  <h3>1.2 Systems × AI infrastructure</h3>
+  <ul>
+    <li>Rust (or C++ / Go) on the critical path, with Python for ML experimentation</li>
+    <li>Inference operations: batching, KV cache, vLLM / SGLang-class stacks</li>
+    <li>Approximate nearest neighbor / search engines under tight latency budgets</li>
+    <li>GPU orchestration and experiment schedulers</li>
+    <li>Postgres with vectors, or database sandboxes for agents</li>
+  </ul>
+  <p>
+    Pure algorithmic interview drills appear less often than at large product companies.
+    Founders commonly screen for shipping speed, debugging instinct, and the ability
+    to defend engineering trade-offs.
+  </p>
+
+  <h2 id="s2">2. Sample of relevant openings</h2>
+  <p class="small">
+    Not exhaustive. Work at a Startup hides additional roles behind login.
+    Figures below are as advertised on public pages around August 2026.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Stack signal</th>
+        <th>Location / pay (listed)</th>
+        <th>Why relevant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mercura (W25)</td>
+        <td>AI/LLM Engineer</td>
+        <td>Python, agents, RAG, FastAPI/React+</td>
+        <td>EU / growth · YC listing</td>
+        <td>Agentic systems, hybrid retrieval, production evals</td>
+      </tr>
+      <tr>
+        <td>Zep AI (W24)</td>
+        <td>Applied Research / Senior AI Eng</td>
+        <td>Python + Rust/C++/Go, PyTorch, vLLM/SGLang</td>
+        <td>Remote-friendly seed · senior band</td>
+        <td>Agent memory; research to production</td>
+      </tr>
+      <tr>
+        <td>Poly (S22)</td>
+        <td>AI Research / Platform (AI Infra)</td>
+        <td>Python, Rust, PyTorch, CUDA</td>
+        <td>SF in-person · $150–350K + equity</td>
+        <td>Multimodal search; Rust encouraged</td>
+      </tr>
+      <tr>
+        <td>Thesis (F25)</td>
+        <td>Member of Technical Staff</td>
+        <td>Python, Rust, PyTorch, RL, GPU orchestration</td>
+        <td>SF · $120–170K + equity</td>
+        <td>Autonomous AI R&amp;D; evolutionary search</td>
+      </tr>
+      <tr>
+        <td>ZeroEntropy (W25)</td>
+        <td>Founding Engineer</td>
+        <td>Rust/C++, Python, CUDA, k8s, IR/rerankers</td>
+        <td>SF · founding equity</td>
+        <td>Retrieval engine in Rust + ML rerankers</td>
+      </tr>
+      <tr>
+        <td>Moss</td>
+        <td>Backend / retrieval infra</td>
+        <td>Rust retrieval core; multi-cloud edge</td>
+        <td>Senior/Staff</td>
+        <td>Sub-10ms semantic search for voice AI</td>
+      </tr>
+      <tr>
+        <td>Rhizome AI (W26)</td>
+        <td>Founding Full Stack AI Eng</td>
+        <td>Next.js, FastAPI, Postgres/ParadeDB, agents</td>
+        <td>LatAm remote (PT overlap) · $60–120K + equity</td>
+        <td>Life-science RAG + regulatory agents</td>
+      </tr>
+      <tr>
+        <td>RamAIn (W26)</td>
+        <td>Founding AI/ML Research Eng</td>
+        <td>Computer-use agents, multimodal, planning</td>
+        <td>Early W26 · founding</td>
+        <td>UI/screenshot agents; vector-search DNA</td>
+      </tr>
+      <tr>
+        <td>OnDeck AI (S25)</td>
+        <td>Founding ML Engineer</td>
+        <td>Vision / general visual tasks</td>
+        <td>Vancouver · $130–250K CAD + equity</td>
+        <td>Novel applied vision systems</td>
+      </tr>
+      <tr>
+        <td>Vector Legal (W26)</td>
+        <td>Founding AI Engineer</td>
+        <td>TS + agents, OCR, eval harnesses</td>
+        <td>YC W26 · founding</td>
+        <td>Document agents with regression evals</td>
+      </tr>
+      <tr>
+        <td>Cerenovus (S26)</td>
+        <td>Founding Engineer</td>
+        <td>Python, TS/React; Rust plus; Claude agents</td>
+        <td>SF in-person · $100–200K + room/board (summer)</td>
+        <td>Multi-agent ingestion → knowledge graphs</td>
+      </tr>
+      <tr>
+        <td>CharacterQuilt (P26)</td>
+        <td>MTS, Agent Systems</td>
+        <td>Computer-use / agent systems</td>
+        <td>NYC · $250–350K</td>
+        <td>Enterprise computer-use agents</td>
+      </tr>
+      <tr>
+        <td>KelAI (P26)</td>
+        <td>Applied AI Engineer</td>
+        <td>ML + quant/alpha systems</td>
+        <td>NYC · $130–215K</td>
+        <td>Autonomous alpha / quant AI wedge</td>
+      </tr>
+      <tr>
+        <td>Pocket (W26)</td>
+        <td>Research Eng — Voice Intelligence</td>
+        <td>Voice ML + product stack</td>
+        <td>SF · $200–300K</td>
+        <td>Real-world voice intelligence</td>
+      </tr>
+      <tr>
+        <td>PgDog (P25)</td>
+        <td>Founding Software Engineer</td>
+        <td>Rust, Postgres sharding/load-balance</td>
+        <td>SF / CA / OR remote · $150–225K + 1–3%</td>
+        <td>Pure Rust systems; AI data-plane adjacent</td>
+      </tr>
+      <tr>
+        <td>Archil (F24)</td>
+        <td>Founding Distributed Systems Eng</td>
+        <td>Rust, TCP/IP, Unix; some Go/k8s</td>
+        <td>SF in-person · $150–250K + equity</td>
+        <td>Distributed storage volumes in Rust</td>
+      </tr>
+      <tr>
+        <td>Dioxus Labs (S23)</td>
+        <td>Founding Rust Engineer</td>
+        <td>Rust full-stack, linkers, WGPU, local AI FT</td>
+        <td>SF in-person · $125–150K + equity</td>
+        <td>Deep Rust; optional local-first finetune</td>
+      </tr>
+      <tr>
+        <td>Vela (W26)</td>
+        <td>Member of Technical Staff</td>
+        <td>ML / AI recruiting product</td>
+        <td>SF · $120–300K</td>
+        <td>AI product eng with ML ownership</td>
+      </tr>
+      <tr>
+        <td>Ardent (P26)</td>
+        <td>Founding Eng — Product (Staff)</td>
+        <td>DB sandboxes for agents</td>
+        <td>SF · $150–200K</td>
+        <td>Agent-facing data/infra primitives</td>
+      </tr>
+      <tr>
+        <td>Hive (S14)</td>
+        <td>Senior SWE, Machine Learning</td>
+        <td>Production ML</td>
+        <td>CA / remote CA · $124–188K CAD</td>
+        <td>Later-stage applied production ML</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="small">
+    Primary portal:
+    <a href="https://www.workatastartup.com/">https://www.workatastartup.com/</a>
+  </p>
+
+  <h2 id="s3">3. Interview process notes</h2>
+  <h3>3.1 Common early-stage pattern</h3>
+  <ol>
+    <li>Founder or recruiter screen (20–60 minutes).</li>
+    <li>Technical round: debugging, pairing, ML+coding, or systems deep-dive.</li>
+    <li>Take-home exercise or a two-to-four hour onsite mini-project.</li>
+    <li>Team consensus and founder close.</li>
+    <li>At seed stage, often a paid trial lasting one day to two weeks.</li>
+  </ol>
+  <p>
+    Typical total length is one to three weeks. The decision criterion is closer to
+    “would I want this person shipping with us tomorrow?” than to a multi-bar
+    algorithm screen.
+  </p>
+
+  <h3>3.2 Company-specific public processes</h3>
+  <ul>
+    <li><strong>Poly.</strong> Intro → insistent project grill → take-home (agent assistance permitted if decisions are defensible) → full team → paid onsite work trial.</li>
+    <li><strong>Thesis.</strong> Intro (1h) → coding + ML challenge (90m) → paid one-week in-person trial.</li>
+    <li><strong>PgDog.</strong> 30m intro → 1–3h technical deep dive → one-to-two week paid contract → full-time.</li>
+    <li><strong>Zep.</strong> Founder screen → two-to-three hour team block (may include a presentation) → decision call.</li>
+  </ul>
+
+  <h3>3.3 Community / candidate signal</h3>
+  <p>
+    Candidate write-ups and hiring-field notes consistently report low LeetCode
+    emphasis at early YC companies relative to large tech firms. Fast loops
+    (“decide within 24 hours”) exist and are themselves a culture signal.
+    A recurring take-home failure mode is over-engineering: for example, building
+    LangGraph + Celery + Redis for a PDF extraction and editable UI task when a
+    simple, correct MVP with a clear “next steps” README would have been stronger.
+    Ask for an hour budget before starting. Where AI assistance is allowed
+    (Poly states this explicitly), expect to defend every implementation choice.
+  </p>
+
+  <h2 id="s4">4. Practice catalogue</h2>
+  <p>
+    Each entry is a learning project: study the theory, hand-code the core,
+    use AI for explanation and review (not to write the hard parts), and ship
+    a small artifact that maps to real postings. Identifiers (<span class="pid">p1</span>–<span class="pid">p24</span>)
+    are for selection in a later syllabus design.
+  </p>
+
+  <div class="practice">
+    <strong><span class="pid">p1</span>.</strong> Tool-calling agent from scratch (no LangChain).
+    <em>Demand: very high. Python. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>ReAct, tool schemas, planning vs reactive loops, failure modes.</dd>
+      <dt>Hand-code</dt><dd>HTTP LLM client, JSON tool registry, loop with max steps, sandbox tools (fs/http/sql).</dd>
+      <dt>AI use</dt><dd>Explain theory; code review; never write the loop for you.</dd>
+      <dt>Jobs</dt><dd>Mercura, Zep, Vector Legal, Cerenovus, CharacterQuilt.</dd>
+      <dt>Ship</dt><dd>CLI agent + traces + README of tradeoffs.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p2</span>.</strong> Multi-agent supervisor with shared scratchpad.
+    <em>Demand: high. Python. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Role specialization, handoff protocols, deadlock/loops.</dd>
+      <dt>Hand-code</dt><dd>Supervisor router, worker agents, message bus, budget/token caps.</dd>
+      <dt>AI use</dt><dd>Critique architecture; generate adversarial test cases.</dd>
+      <dt>Jobs</dt><dd>Cerenovus, CharacterQuilt, Mercura.</dd>
+      <dt>Ship</dt><dd>Research→coder→critic pipeline on a real task.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p3</span>.</strong> Hybrid RAG: BM25 + embeddings + rerank.
+    <em>Demand: very high. Python. 2–4 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Lexical vs dense, fusion (RRF), chunking, citation grounding.</dd>
+      <dt>Hand-code</dt><dd>Ingest→chunk→index; BM25; cosine ANN; cross-encoder rerank; cite spans.</dd>
+      <dt>AI use</dt><dd>Help derive formulas; quiz you; review eval metrics.</dd>
+      <dt>Jobs</dt><dd>Mercura, Rhizome, ZeroEntropy, Poly, Vector Legal.</dd>
+      <dt>Ship</dt><dd>Search API + precision/recall notebook on a fixed corpus.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p4</span>.</strong> Tiny vector index in Rust (HNSW or IVF).
+    <em>Demand: high. Rust (+ Python bindings optional). 3–5 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>ANN graphs, recall@k vs latency, memory layouts.</dd>
+      <dt>Hand-code</dt><dd>Own HNSW insert/search; serialize index; bench vs naive.</dd>
+      <dt>AI use</dt><dd>Walk paper; never paste the graph code—you type it.</dd>
+      <dt>Jobs</dt><dd>ZeroEntropy, Moss, Poly, RamAIn (IR DNA).</dd>
+      <dt>Ship</dt><dd>crate + benches + recall/latency plot.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p5</span>.</strong> Eval harness with regression gates.
+    <em>Demand: very high. Python. 1–2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Golden sets, LLM-as-judge pitfalls, CI for prompts.</dd>
+      <dt>Hand-code</dt><dd>Dataset format, scorers (exact/F1/judge), CLI compare, fail CI.</dd>
+      <dt>AI use</dt><dd>Suggest judge rubrics; you implement scoring.</dd>
+      <dt>Jobs</dt><dd>Mercura, Zep, Vector Legal, Vela.</dd>
+      <dt>Ship</dt><dd>pytest/CI that blocks prompt regressions.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p6</span>.</strong> Temporal agent memory / context graph.
+    <em>Demand: high. Python (+ Rust hot path later). 3–4 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Episodic vs semantic memory, entity resolution, forgetting.</dd>
+      <dt>Hand-code</dt><dd>Extract entities/events; store graph; retrieve under a latency budget.</dd>
+      <dt>AI use</dt><dd>Discuss Graphiti-style designs; you own schema + queries.</dd>
+      <dt>Jobs</dt><dd>Zep, Cerenovus, Ardent-adjacent.</dd>
+      <dt>Ship</dt><dd>Memory API with latency budget + ablation.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p7</span>.</strong> Document intelligence pipeline (OCR→structure→QA).
+    <em>Demand: high. Python. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Layout, OCR noise, structured extraction, citations.</dd>
+      <dt>Hand-code</dt><dd>PDF ingest, table/section parse, schema extract, grounded QA.</dd>
+      <dt>AI use</dt><dd>Help design schemas; you write parsers/tests.</dd>
+      <dt>Jobs</dt><dd>Rhizome, Vector Legal, Mercura; common take-home shape.</dd>
+      <dt>Ship</dt><dd>PDF→JSON→cited answers; thin editable UI optional.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p8</span>.</strong> Screenshot / UI grounding agent slice.
+    <em>Demand: high. Python. 3–4 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>VLM grounding, action spaces, long-horizon planning.</dd>
+      <dt>Hand-code</dt><dd>Capture→detect elements→action select→verify loop on a toy app.</dd>
+      <dt>AI use</dt><dd>Paper summaries; you implement action selector + evals.</dd>
+      <dt>Jobs</dt><dd>RamAIn, CharacterQuilt, OnDeck (vision).</dd>
+      <dt>Ship</dt><dd>Agent completes five scripted UI tasks with success rate.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p9</span>.</strong> Fine-tune + evaluate a small model end-to-end.
+    <em>Demand: high. Python / PyTorch. 2–4 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>LoRA/QLoRA, data curation, overfitting, eval vs vibe.</dd>
+      <dt>Hand-code</dt><dd>Dataset prep, LoRA train script, eval suite, serve one endpoint.</dd>
+      <dt>AI use</dt><dd>Debug loss curves with you; you own training loop edits.</dd>
+      <dt>Jobs</dt><dd>Zep, Thesis, Poly, OnDeck, Hive.</dd>
+      <dt>Ship</dt><dd>Before/after metrics + serving notes.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p10</span>.</strong> Mini RL / evolutionary search for prompts or hparams.
+    <em>Demand: niche-high. Python. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Bandits, evolutionary strategies, reward hacking.</dd>
+      <dt>Hand-code</dt><dd>Population, mutate, evaluate, select; log Pareto front.</dd>
+      <dt>AI use</dt><dd>Theory quizzes; you implement search.</dd>
+      <dt>Jobs</dt><dd>Thesis, KelAI-adjacent.</dd>
+      <dt>Ship</dt><dd>Hill-climb that beats a hand-tuned baseline.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p11</span>.</strong> Toy inference server (batching + KV cache).
+    <em>Demand: high. Python then Rust/C++ optional. 3–5 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Continuous batching, KV cache, throughput vs latency.</dd>
+      <dt>Hand-code</dt><dd>Tokenize, cache tensors, dynamic batch scheduler, metrics.</dd>
+      <dt>AI use</dt><dd>Explain vLLM concepts; you reimplement a simplified core.</dd>
+      <dt>Jobs</dt><dd>Zep, Poly, Thesis, ZeroEntropy.</dd>
+      <dt>Ship</dt><dd>Bench: req/s and p95 vs naive sequential.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p12</span>.</strong> CUDA/kernels lite: custom op or fused softmax.
+    <em>Demand: niche-high. Python + CUDA or Triton. 2–4 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Memory bandwidth, tiling, warps.</dd>
+      <dt>Hand-code</dt><dd>One fused kernel; correctness vs PyTorch; speedup table.</dd>
+      <dt>AI use</dt><dd>Walk GPU model; you write the kernel.</dd>
+      <dt>Jobs</dt><dd>Poly, ZeroEntropy, Thesis.</dd>
+      <dt>Ship</dt><dd>Kernel + correctness tests + speedup writeup.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p13</span>.</strong> Rust streaming SSE LLM gateway.
+    <em>Demand: high. Rust. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Backpressure, timeouts, retries, auth, cost metering.</dd>
+      <dt>Hand-code</dt><dd>axum/hyper proxy, stream parse, rate limits, structured logs.</dd>
+      <dt>AI use</dt><dd>API design critique; you write concurrent code.</dd>
+      <dt>Jobs</dt><dd>Moss, Zep, Poly, Archil-style systems shops.</dd>
+      <dt>Ship</dt><dd>Gateway crate with load-test numbers.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p14</span>.</strong> Embed Python ML in Rust (PyO3) hot path.
+    <em>Demand: medium. Rust + Python. 2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>FFI, GIL, zero-copy buffers.</dd>
+      <dt>Hand-code</dt><dd>Rust service calls model; measure overhead.</dd>
+      <dt>AI use</dt><dd>Explain FFI pitfalls; you own unsafe boundaries carefully.</dd>
+      <dt>Jobs</dt><dd>ZeroEntropy, Poly, Zep.</dd>
+      <dt>Ship</dt><dd>Hybrid service with a latency budget.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p15</span>.</strong> Postgres-aware mini query router / pooler.
+    <em>Demand: medium. Rust. 3–5 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Connection pooling, prepared statements, simple shard key.</dd>
+      <dt>Hand-code</dt><dd>TCP proxy speaking a Postgres wire subset, or SQL rewrite layer.</dd>
+      <dt>AI use</dt><dd>Protocol docs; you implement the state machine.</dd>
+      <dt>Jobs</dt><dd>PgDog, Archil, Ardent.</dd>
+      <dt>Ship</dt><dd>Proxy that routes read/write with tests.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p16</span>.</strong> Distributed job queue for GPU experiments.
+    <em>Demand: high. Python + Rust worker optional. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Schedulers, idempotency, preemption, artifact store.</dd>
+      <dt>Hand-code</dt><dd>Enqueue train jobs, workers, retries, result store.</dd>
+      <dt>AI use</dt><dd>Compare to Ray/Slurm concepts; you build a thin version.</dd>
+      <dt>Jobs</dt><dd>Thesis, Poly, Hive.</dd>
+      <dt>Ship</dt><dd>Local multi-worker trainer orchestrator.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p17</span>.</strong> Streaming STT → LLM → TTS pipeline with barge-in.
+    <em>Demand: medium. Python. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Partial transcripts, VAD, latency budgets, interruption.</dd>
+      <dt>Hand-code</dt><dd>WebSocket audio loop, state machine, metrics.</dd>
+      <dt>AI use</dt><dd>Architecture review; you own the state machine.</dd>
+      <dt>Jobs</dt><dd>Pocket, Moss (retrieval for voice).</dd>
+      <dt>Ship</dt><dd>Demo call with p95 end-to-end latency report.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p18</span>.</strong> YC-style take-home simulator: PDF agent + thin UI.
+    <em>Demand: very high. Python (+ minimal TS). 1 weekend drill.</em>
+    <dl>
+      <dt>Theory</dt><dd>Scope control; do not overbuild.</dd>
+      <dt>Hand-code</dt><dd>Extract fields from messy PDF; editable table; 4–6h budget.</dd>
+      <dt>AI use</dt><dd>Allowed if you can defend every choice live.</dd>
+      <dt>Jobs</dt><dd>Generic YC AI take-homes; Vector Legal; Mercura.</dd>
+      <dt>Ship</dt><dd>MVP + README with time spent + next-steps section.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p19</span>.</strong> ParadeDB / Postgres full-text + vectors.
+    <em>Demand: high. Python + SQL. 1–2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>DB-native search vs external vector DB.</dd>
+      <dt>Hand-code</dt><dd>Schema, hybrid SQL queries, ranking, explain plans.</dd>
+      <dt>AI use</dt><dd>SQL review; you write indexes/queries.</dd>
+      <dt>Jobs</dt><dd>Rhizome (ParadeDB), PgDog-adjacent data path.</dd>
+      <dt>Ship</dt><dd>SQL notebook + API wrapping hybrid search.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p20</span>.</strong> CLIP-style dual encoder from scratch (tiny).
+    <em>Demand: medium. PyTorch. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Contrastive loss, temperature, dual towers.</dd>
+      <dt>Hand-code</dt><dd>Train on a tiny image-text set; retrieval eval.</dd>
+      <dt>AI use</dt><dd>Derive loss with you; you implement forward/backward pieces.</dd>
+      <dt>Jobs</dt><dd>Poly, OnDeck, RamAIn.</dd>
+      <dt>Ship</dt><dd>Trained toy model + R@1 / R@5.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p21</span>.</strong> Red-team suite for agents (prompt injection + tool abuse).
+    <em>Demand: high. Python. 1–2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Indirect injection, confused deputy, allowlists.</dd>
+      <dt>Hand-code</dt><dd>Attack corpus, sandbox policy, metrics of blocked/allowed.</dd>
+      <dt>AI use</dt><dd>Brainstorm attacks; you implement harness.</dd>
+      <dt>Jobs</dt><dd>Any agent company (Mercura, Zep, CharacterQuilt).</dd>
+      <dt>Ship</dt><dd>Security eval report + mitigations.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p22</span>.</strong> Concurrent inverted index snippets in Rust.
+    <em>Demand: niche-high. Rust. 2–3 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>Concurrency, practical memory ordering.</dd>
+      <dt>Hand-code</dt><dd>Concurrent postings updates; snapshot readers.</dd>
+      <dt>AI use</dt><dd>Review unsafe; you minimize it.</dd>
+      <dt>Jobs</dt><dd>ZeroEntropy, Moss.</dd>
+      <dt>Ship</dt><dd>Concurrent index with loom/stress tests.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p23</span>.</strong> Implement attention + transformer block by hand.
+    <em>Demand: high. Python/NumPy then PyTorch. 1–2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>QKV, scaled dot-product, causal mask, layernorm.</dd>
+      <dt>Hand-code</dt><dd>No <code>nn.MultiheadAttention</code> until your version matches.</dd>
+      <dt>AI use</dt><dd>Derive shapes; quiz; refuse to dump the full solution.</dd>
+      <dt>Jobs</dt><dd>Poly (explicit equations), Thesis, OnDeck.</dd>
+      <dt>Ship</dt><dd>Notebook proving parity vs reference.</dd>
+    </dl>
+  </div>
+
+  <div class="practice">
+    <strong><span class="pid">p24</span>.</strong> Observability for LLM apps (traces, costs, failures).
+    <em>Demand: high. Python. 1–2 weeks.</em>
+    <dl>
+      <dt>Theory</dt><dd>OpenTelemetry concepts, SLOs for non-determinism.</dd>
+      <dt>Hand-code</dt><dd>Span every LLM/tool call; cost meter; failure taxonomy.</dd>
+      <dt>AI use</dt><dd>Suggest dashboards; you instrument code.</dd>
+      <dt>Jobs</dt><dd>Mercura, Zep, Rhizome (Logfire etc.).</dd>
+      <dt>Ship</dt><dd>Trace viewer or Grafana-ready metrics.</dd>
+    </dl>
+  </div>
+
+  <h2 id="s5">5. Suggested shortlists</h2>
+  <p>These are optional starting bundles only. Selection remains open.</p>
+  <ul>
+    <li><strong>Path A — Applied AI engineer.</strong> p1 → p3 → p5 → p7 → p18. Covers Mercura / Rhizome / Vector Legal style roles.</li>
+    <li><strong>Path B — Rust × AI infrastructure.</strong> p4 → p13 → p11 → p6 → p15. Covers ZeroEntropy / Moss / Poly / Zep systems bar.</li>
+    <li><strong>Path C — Research → production ML.</strong> p23 → p9 → p20 → p10 → p16. Covers Thesis / OnDeck / Poly research-engineer flavor.</li>
+  </ul>
+  <p>
+    Next step: choose practice identifiers (and optionally target companies).
+    Those choices can be expanded into a weekly hand-coding syllabus with explicit
+    AI-tutor rules so the difficult parts are not autopiloted.
+  </p>
+
+  <h2 id="s6">6. Sources</h2>
+  <ol>
+    <li>Y Combinator, <em>Work at a Startup</em>. <a href="https://www.workatastartup.com/">https://www.workatastartup.com/</a></li>
+    <li>Public company job pages on ycombinator.com (Mercura, Poly, Thesis, Zep AI, Rhizome AI, RamAIn, OnDeck AI, Vector Legal, Cerenovus, PgDog, Dioxus Labs, and others), retrieved August 2026.</li>
+    <li>Standout, “How to Interview at a YC Startup (As a Candidate).” <a href="https://standout.work/blog/how-to-interview-at-a-yc-startup">https://standout.work/blog/how-to-interview-at-a-yc-startup</a></li>
+    <li>Candidate write-ups on fast YC loops and take-home over-engineering (community posts, 2023–2026).</li>
+  </ol>
+
+  <div class="footnote">
+    End of note. White paper layout; monochrome for reading and print.
+    File: <code>~/Desktop/yc-ai-learning-syllabus.html</code>
+  </div>
+</div>
+</body>
+</html>
