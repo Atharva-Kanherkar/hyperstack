@@ -1,4 +1,4 @@
-# AGENTS.md — Handcode Lab
+# AGENTS.md — Hyperstack
 
 Canonical instructions for any coding agent working in this repository.
 

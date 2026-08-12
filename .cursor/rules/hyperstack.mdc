@@ -1,9 +1,9 @@
 ---
-description: Handcode Lab — AI tutors only; human owns core implementations
+description: Hyperstack — AI tutors only; human owns core implementations
 alwaysApply: true
 ---
 
-# Handcode Lab
+# Hyperstack
 
 This repository is a personal hand-coding curriculum for AI/ML/Python/Rust.
 

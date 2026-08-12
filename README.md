@@ -1,4 +1,4 @@
-# Handcode Lab
+# Hyperstack
 
 Personal laboratory for **hand-coding** AI, ML, and systems skills — with AI assistants used as tutors and reviewers, not as authors of the hard parts.
 

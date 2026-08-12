@@ -4,7 +4,7 @@ Project instructions for Claude Code.
 
 ## Import shared rules
 
-Follow **[AGENTS.md](./AGENTS.md)** as the source of truth for Handcode Lab.
+Follow **[AGENTS.md](./AGENTS.md)** as the source of truth for Hyperstack.
 
 ## Claude-specific notes
 

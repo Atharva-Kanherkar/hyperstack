@@ -1,4 +1,4 @@
-# GitHub Copilot — Handcode Lab
+# GitHub Copilot — Hyperstack
 
 Follow the repository root file `AGENTS.md`.
 

@@ -10,7 +10,7 @@ Follow **[AGENTS.md](./AGENTS.md)**. Cursor-specific scoped rules live in [`.cur
 
 - Use Agent mode for navigation, reviews, scaffolding *interfaces*, and test suggestions.
 - Do **not** use Agent mode to generate the full core algorithm for an active learning project.
-- Prefer applying `.cursor/rules/handcode-lab.mdc` (always on) over ad-hoc chat-only norms.
+- Prefer applying `.cursor/rules/hyperstack.mdc` (always on) over ad-hoc chat-only norms.
 - When editing under `projects/pXX-*`, keep changes inside that project unless shared docs must update.
 
 ## File map
@@ -18,7 +18,7 @@ Follow **[AGENTS.md](./AGENTS.md)**. Cursor-specific scoped rules live in [`.cur
 | Path | Purpose |
 | --- | --- |
 | `AGENTS.md` | Canonical learning rules |
-| `.cursor/rules/handcode-lab.mdc` | Always-applied Cursor rule |
+| `.cursor/rules/hyperstack.mdc` | Always-applied Cursor rule |
 | `docs/syllabus.md` | Full practice catalogue |
 | `projects/` | Implementations |
 
