@@ -5,3 +5,8 @@ text = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
 print(text)
 print(len(tok(text).input_ids), "tokens after template;",
       len(tok("What is the total on this receipt?").input_ids), "without")
+
+
+
+from transformers import AutoTokenizer
+tok = AutoTokenizer.from_pretrained()
